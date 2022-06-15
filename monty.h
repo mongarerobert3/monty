@@ -38,9 +38,13 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct arg - global variable to hold the value of the argument of the opcode
- * @arg : argument
- * 
+ * struct arguments - Values to be accessed by various functions
+ * @argv: Name of the executable
+ * @counter: counts number of lines
+ * @line: input line
+ * @stack: doubly linked list
+ * @file: file
+ * @order: FIFO or LIFO
  */
 
 typedef struct arguments
