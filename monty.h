@@ -52,7 +52,7 @@ typedef struct arguments
     FILE *file;
     int order;
 
-}arg_t;
+}args_t;
 
 
 
@@ -72,6 +72,36 @@ void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 /* opcodes functions end*/
 
+/* interpreter functions start */
+void monty(void);
+void caller(void);
+void cleaner(void);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+/* interpreter functions end*/
+
+/* interpreter-ii functions start */
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+/* interpreter-ii functions end*/
+
+/* math-ops functions start */
+void add(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void divide(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+/* math-ops functions end*/
+
+/* linkedlist functions start */
+stack_t *add_dnodeint(stack_t **head, const int n);
+size_t print_dlistint(const stack_t *h);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
+void free_dlistint(stack_t *head);
+size_t stack_size(const stack_t *h);
+int check_string(char *s);
+/* linkedlist functions end*/
+
+extern args_t args;
 
 
 #endif
