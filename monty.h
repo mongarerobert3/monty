@@ -1,7 +1,10 @@
 #ifndef _MONTY_
 #define _MONTY_
 
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,16 +43,35 @@ typedef struct instruction_s
  * 
  */
 
-typedef struct arg
+typedef struct arguments
 {
-    char *argument;
-}arg;
-arg Arg;
+    char **argv;
+    ssize_t counter;
+    char *line;
+    stack_t *stack;
+    FILE *file;
+    int order;
+
+}arg_t;
 
 
-void run_opcode(char *opcode, stack_t **stack, unsigned int line_number);
+
+/* str-ops function start */
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+/* str-ops functions end*/
+
+/* opcodes functions start */
 void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+/* opcodes functions end*/
+
 
 
 #endif
