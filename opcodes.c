@@ -6,8 +6,8 @@
  * @stack: indicating a doubly linkedlist
  * @line_number: the number line
  *
- * Description: check paraams params variable against input strings
- * then, locate stack beased on the order of input arguements
+ * Description: check params variable against input strings
+ * then, locate stack based on the order of input arguments
  * Return: Nothing.
  */
 void push(stack_t **stack, unsigned int line_number)
